@@ -18,6 +18,11 @@ return require("packer").startup(function(use)
 	})
 
 	use({
+		"nvim-telescope/telescope-file-browser.nvim",
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	})
+
+	use({
 		"svrana/neosolarized.nvim",
 		requires = { "tjdevries/colorbuddy.nvim" },
 	})
@@ -26,6 +31,7 @@ return require("packer").startup(function(use)
 
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("mbbill/undotree")
+	use("tpope/vim-fugitive")
 
 	use({
 		"VonHeikemen/lsp-zero.nvim",
