@@ -13,7 +13,6 @@ return require("packer").startup(function(use)
 
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
@@ -23,8 +22,10 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"svrana/neosolarized.nvim",
-		requires = { "tjdevries/colorbuddy.nvim" },
+		"craftzdog/solarized-osaka.nvim",
+		lazy=false,
+		priority=1000,
+		opts={},
 	})
 
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
