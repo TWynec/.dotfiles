@@ -2,6 +2,16 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
+require("mason").setup({})
+require("mason-lspconfig").setup({
+    ensure_installed = { "tsserver", "python-lsp-server" },
+    handlers = {
+        function(server_name)
+            require("lspconfig")[server_name].setup({})
+        end,
+    },
+})
+
 lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
